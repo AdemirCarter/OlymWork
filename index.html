@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu // OlymWork</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="cabecario">
+        <img src="https://yt3.googleusercontent.com/ez93sCYJPcPef3xTprWeUGX_Tz2JHqMX6HDQGwv5N1Z6LwfXFTcOF6iGS84ZqjSjS8vpRxeV5g=s900-c-k-c0x00ffffff-no-rj" alt="" id="foto">
+        <div>
+            <p>Bem-vindo,</p>
+            <h3 id="user">Usuario</h3>
+        </div>
+    </div>
+
+    <div class="Lista">
+
+        <div class="TreinoA">
+            <img src="https://i.ytimg.com/vi/wBNYccFR2MM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJ0p9O10_aZB5tLD_q_kQL4kHYVQ" alt="" id="fundo">
+
+            <div>
+
+                <h2>Treino <span style="color: #0051ff">A</span></h2>
+                <button id="Iniciar">Iniciar ></button>
+
+            </div>
+
+        </div>
+
+        <div class="TreinoB">
+            <img src="https://blogscdn.thehut.net/wp-content/uploads/sites/478/2015/09/28015932/backday.jpg" alt="" id="fundo">
+
+            <div>
+
+                <h2>Treino <span style="color: #0051ff">B</span></h2>
+                <button id="Iniciar">Iniciar ></button>
+
+            </div>
+
+        </div>
+
+        <div class="TreinoC">
+            <img src="https://blog.gsuplementos.com.br/wp-content/uploads/2024/03/iStock-1287874606.jpg" alt="" id="fundo">
+
+            <div>
+
+                <h2>Treino <span style="color: #0051ff">C</span></h2>
+                <button id="Iniciar">Iniciar ></button>
+
+            </div>
+
+        </div>
+
+        <div class="TreinoD">
+            <img src="https://pratiquefitness.com.br/blog/wp-content/uploads/2023/11/Como-fazer-triceps-corda.jpg" alt="" id="fundo">
+
+            <div>
+
+                <h2>Treino <span style="color: #0051ff">D</span></h2>
+                <button id="Iniciar">Iniciar ></button>
+
+            </div>
+
+        </div>
+
+        <div class="TreinoE">
+            <img src="https://vitat.com.br/wp-content/uploads/2023/09/melhores-exercicios-para-posteri-2.jpg" alt="" id="fundo">
+
+            <div>
+
+                <h2>Treino <span style="color: #0051ff">E</span></h2>
+                <button id="Iniciar">Iniciar ></button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="diversos">
+
+        <p>Você também pode usar:</p>
+
+        <div>
+
+            <button id="Perfil">
+                <img src="https://img.icons8.com/?size=100&id=2yC9SZKcXDdX&format=png&color=000000" alt="">
+                <p>Perfil</p>
+            </button>
+            <button id="Contato">
+                <img src="https://img.icons8.com/?size=100&id=YofCJMBKd3GN&format=png&color=000000" alt="">
+                <p>Contato</p>
+            </button>
+            <button id="Sobre mim">
+                <img src="https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=000000" alt="">
+                <p>Sobre Mim</p>
+            </button>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    localStorage.setItem("user", "Ademir")
+
+    let user = localStorage.getItem("user")
+
+    const userName = document.querySelector("#user")
+    userName.textContent = user
+
+    const button_TA = document.querySelector(".TreinoA").querySelector("#Iniciar")
+    const button_TB = document.querySelector(".TreinoB").querySelector("#Iniciar")
+    const button_TC = document.querySelector(".TreinoC").querySelector("#Iniciar")
+    const button_TD = document.querySelector(".TreinoD").querySelector("#Iniciar")
+    const button_TE = document.querySelector(".TreinoE").querySelector("#Iniciar")
+
+    function IniciarTreino(treino) {
+        window.location.href = `${treino}.html`
+    }
+
+    button_TA.addEventListener("click", () => IniciarTreino("treinoA"))
+    button_TB.addEventListener("click", () => IniciarTreino("treinoB"))
+    button_TC.addEventListener("click", () => IniciarTreino("treinoC"))
+    button_TD.addEventListener("click", () => IniciarTreino("treinoD"))
+    button_TE.addEventListener("click", () => IniciarTreino("treinoE"))
+
+</script>
+
+</html>

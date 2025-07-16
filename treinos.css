@@ -1,0 +1,119 @@
+@media screen and (max-width: 600px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        padding: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        backdrop-filter: brightness(40%) blur(2px);
+    }
+
+    #voltar {
+
+        position: absolute;
+        border: none;
+        border-radius: 100%;
+        padding: 10px;
+        background-color: #ffffff3b;
+        justify-content: center;
+
+    }
+
+    #voltar img {
+        width: 20px;
+        align-self: center;
+    }
+
+    .fundo {
+        background-color: white;
+        height: 455px;
+        position: relative;
+        top: 180px;
+        padding: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .fundo .title {
+        align-items: center;
+        display: flex;
+        gap: 100px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #828282;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+
+    }
+
+    .fundo .title button {
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        background-color: #0051ff;
+        color: white;
+    }
+
+    .fundo .treino {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        height: 330px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: #e3e3e3;
+        border: 1px solid rgb(172, 172, 172);
+        border-radius: 20px;
+    }
+
+    .fundo .treino #nome {
+        font-weight: 600;
+        color: #0051ff;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .fundo .treino .exercicio {
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #000000;
+        border-radius: 10px;
+        display: flex;
+        gap: 30px;
+    }
+
+    .fundo .treino .exercicio img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .fundo .treino .exercicio .infos p {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .fundo .treino .exercicio .infos input {
+        width: 30px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        text-align: center;
+        margin-right: 2px;
+    }
+
+    .fundo .treino .exercicio .infos label {
+        color: rgb(86, 86, 86);
+        font-size: 11px;
+        margin-right: 5px;
+    }
+
+}

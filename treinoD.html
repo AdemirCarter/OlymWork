@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino B // OlymWork</title>
+    <link rel="stylesheet" href="treinos.css">
+</head>
+<body style="background: url(https://jornaldejales.com.br/wp-content/uploads/2022/09/04-opcional-1.jpg);">
+
+    <button id="voltar"><img src="https://img.icons8.com/?size=100&id=40217&format=png&color=ffffff" alt=""></button>
+
+    <div class="fundo">
+
+        <div class="title">
+            <h2>Treino D</h2>
+            <button id="salvar">Salvar Treino</button>
+        </div>
+
+        <div class="treino">
+
+            <p id="nome">Exercicios</p>
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let user = localStorage.getItem("user")
+
+    console.log(user)
+
+    const treinoDiv = document.querySelector(".treino")
+
+    const voltar = document.querySelector("#voltar")
+    const salvar = document.querySelector("#salvar")
+
+    voltar.addEventListener("click", function() {
+        window.location.href = "index.html"
+    })
+
+    fetch("database.json")
+    .then(res => res.json())
+    .then(data => {
+
+        data[user].TreinoD.forEach((exercicio, count) => {
+
+            const div = document.createElement("div")
+            div.className = "exercicio"
+            div.id = exercicio
+
+            treinoDiv.append(div)
+
+            const thumb = document.createElement("img")
+            thumb.src = `/Assets/${exercicio}.png`
+            thumb.id = "thumb"
+
+            div.append(thumb)
+
+            const InfoDiv = document.createElement("div")
+            InfoDiv.className = "infos"
+
+            div.append(InfoDiv)
+
+            const nomeExercicio = document.createElement("p")
+            nomeExercicio.textContent = exercicio
+
+            InfoDiv.append(nomeExercicio)
+
+            const inputs = ["peso", "reps", "sets"]
+            const labels = ["kg", "rep", "set"]
+
+            inputs.forEach((notes, count) => {
+
+                const input = document.createElement("input")
+                input.id = `${notes} ${exercicio}`
+                input.type = "Number"
+                input.value = localStorage.getItem(input.id)
+
+                const label = document.createElement("label")
+                label.textContent = labels[count]
+                label.htmlFor = notes
+                
+                InfoDiv.append(input)
+                InfoDiv.append(label)
+            })
+
+        })
+
+    })
+
+    salvar.addEventListener("click", function() {
+        const divs = treinoDiv.querySelectorAll(".exercicio")
+
+        divs.forEach(elementos => {
+            const input = elementos.querySelector(".infos").querySelectorAll("input")
+
+            input.forEach(inputs => {
+
+                localStorage.setItem(inputs.id, inputs.value)
+
+            })
+        })
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "Ademir" : {
+        "TreinoA": ["Triceps W", "JM Press Machine", "Triceps Frances Polia", "Elevação Lateral", "Supino Reto", "Voador", "Supino Inclinado", "Rosca Punho"],
+        "TreinoB": ["Panturrilha Hack", "Agachamento Livre", "Extensora", "Cadeira Flexora", "Stiff", "Cadeira Adutora"],
+        "TreinoC": ["Puxada Aberta", "Puxada Triangulo", "Remada Baixa", "Remada Curvada", "Rosca Direta", "Rosca Martelo", "Rosca Bayesian", "Elevação Frontal"],
+        "TreinoD": ["Supino Reto", "Voador", "Supino Inclinado", "Polia Alta", "Triceps W", "Triceps Frances Polia", "Elevação Lateral", "Rosca Punho"],
+        "TreinoE": ["Panturrilha Hack","Cadeira Flexora", "Stiff", "Agachamento Livre", "Extensora",  "Cadeira Adutora"]
+    }
+}
