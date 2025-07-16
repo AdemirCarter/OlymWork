@@ -8,9 +8,7 @@
 
     body {
         padding: 10px;
-        background: url("https://academiacorpoesaude.com.br/wp-content/uploads/2023/06/Gama-4.jpg") no-repeat center/cover;
-        height: 650px;
-        backdrop-filter: blur(2px) brightness(25%);
+        background-color: rgb(206, 206, 206);
     }
 
     /*Cabecario*/
@@ -19,17 +17,17 @@
         align-items: center;
         gap: 10px;
         margin-bottom: 50px;
-        color: white;
+        color: rgb(0, 0, 0);
         padding: 5px;
         border-radius: 20px;
-        border-bottom: 2px solid rgb(206, 206, 206);
+        background-color: white;
     }
 
     .cabecario #user {font-size: 25px; color: #0051ff;}
 
     .cabecario p {
         font-size: 14px;
-        font-weight: 100;
+        font-weight: 200;
     }
 
     #foto {
@@ -84,7 +82,7 @@
         border-radius: 10px;
         font-weight: 600;
         border: none;
-        color: white;
+        color: rgb(255, 255, 255);
         background-color: #0051ff;
         transition: .3s;
     }
@@ -98,14 +96,15 @@
     .diversos {
         justify-items: center;
         align-items: center;
-        color: white;
+        color: rgb(0, 0, 0);
     }
 
     .diversos div {
 
         margin-top: 20px;
         align-items: center;
-        
+        display: flex;
+        gap: 30px;
     }
 
     .diversos div button{

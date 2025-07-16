@@ -53,7 +53,7 @@
             treinoDiv.append(div)
 
             const thumb = document.createElement("img")
-            thumb.src = `Assets/${exercicio}.png`
+            thumb.src = `/Assets/${exercicio}.png`
             thumb.id = "thumb"
 
             div.append(thumb)
@@ -68,8 +68,8 @@
 
             InfoDiv.append(nomeExercicio)
 
-            const inputs = ["peso", "reps", "sets"]
-            const labels = ["kg", "rep", "set"]
+            const inputs = ["peso", "rep1", "rep2", "rep3", "sets"]
+            const labels = ["kg", "rep1", "rep2", "rep3", "set"]
 
             inputs.forEach((notes, count) => {
 
@@ -102,6 +102,8 @@
 
             })
         })
+
+        alert("Salvo com sucesso")
     })
 
 </script>
