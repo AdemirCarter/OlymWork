@@ -59,6 +59,12 @@
 
 <script>
 
+    localStorage.setItem("user", "Ademir")
+
+    local user = localStorage.getItem("user")
+
+    document.querySelector("#user").textContent = `Olá, ${user}`
+
     const treinoA = document.querySelector(".TreinoA")
     const treinoB = document.querySelector(".TreinoB")
     const treinoC = document.querySelector(".TreinoC")
