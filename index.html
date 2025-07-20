@@ -1,96 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu / OlymCarter</title>
+    <title>Home / OlymWork</title>
     <link rel="stylesheet" href="index.css">
-    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-    <meta name="theme-color" content="#292929">
+    <meta name="theme-color" content="#000000">
 </head>
 <body>
-    <div class="cabecario">
-        <h2 id="user">Olá, Usuario</h2>
-        <p id="date">1 de Janeiro de 2025</p>
+    <div class="title">
+        <h1>O que deseja treinar hoje, <span id="user">Ademir</span>?</h1>
     </div>
 
-    <div class="desc">
-        <p id="desc">Escolha sua planilha para começar seu treino</p>
-
-        <h3 id="titulo">Plano Personalizado</h3>
-    </div>
-
-    <div class="treinos">
-
-        <button class="TreinoA">
-            <img src="Assets/treinoA.png" alt="">
-        </button>
-
-        <button class="TreinoB">
-            <img src="Assets/treinoB.png" alt="">
-        </button>
-
-        <button class="TreinoC">
-            <img src="Assets/treinoC.png" alt="">
-        </button>
-
-        <button class="TreinoD">
-            <img src="Assets/treinoD.png" alt="">
-        </button>
-
-        <button class="TreinoE">
-            <img src="Assets/treinoE.png" alt="">
-        </button>
+    <div class="escolher">
+        <button id="left"><img src="https://img.icons8.com/?size=100&id=40217&format=png&color=ffffff" alt=""></button>
+        <div class="treinos">
+            <button id="treinoA">Treino A</button>
+            <button id="treinoB">Treino B</button>
+            <button id="treinoC">Treino C</button>
+            <button id="treinoD">Treino D</button>
+            <button id="treinoE">Treino E</button>
+        </div>
+        <button id="right"><img src="https://img.icons8.com/?size=100&id=7849&format=png&color=ffffff" alt=""></button>
     </div>
 
     <div class="navbar">
-        
         <div>
-            <button id="selecionado">
-            <img src="https://img.icons8.com/?size=100&id=31197&format=png&color=be1fff" alt="">
-            <p>Meu Plano</p>
-            </button>
-
-            <button>
-                <img src="https://img.icons8.com/?size=100&id=2yC9SZKcXDdX&format=png&color=9d9d9d" alt="">
-                <p>Perfil</p>
-            </button>
-
-            <button>
-                <img src="https://img.icons8.com/?size=100&id=ZOFC5nSr215Y&format=png&color=9d9d9d" alt="">
-                <p>Contato</p>
-            </button>
+            <button id="home"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=642eff" alt=""></button>
+            <button><img src="https://img.icons8.com/?size=100&id=ATc0iViHX2IC&format=png&color=ffffff" alt=""></button>
+            <button><img src="https://img.icons8.com/?size=100&id=2yC9SZKcXDdX&format=png&color=ffffff" alt=""></button>
         </div>
-        
     </div>
 </body>
 
 <script>
+    const leftButton = document.querySelector("#left")
+    const rightButton = document.querySelector("#right")
 
-    localStorage.setItem("user", "Ademir")
+    const treinoDiv = document.querySelector(".treinos")
+    const treinoA = treinoDiv.querySelector("#treinoA")
+    const treinoB = treinoDiv.querySelector("#treinoB")
+    const treinoC = treinoDiv.querySelector("#treinoC")
+    const treinoD = treinoDiv.querySelector("#treinoD")
+    const treinoE = treinoDiv.querySelector("#treinoE")
 
-    const user = localStorage.getItem("user")
+    let number = 1
 
-    document.querySelector("#user").textContent = `Olá, ${user}`
+    function Roll() {
 
-    const treinoA = document.querySelector(".TreinoA")
-    const treinoB = document.querySelector(".TreinoB")
-    const treinoC = document.querySelector(".TreinoC")
-    const treinoD = document.querySelector(".TreinoD")
-    const treinoE = document.querySelector(".TreinoE")
+        console.log(number)
 
-    function treino(qual) {
-
-        window.location.href = `${qual}.html`
-
+        if (number == 1) {
+            treinoDiv.querySelector("#treinoA").scrollIntoView()
+        }
+        else if (number == 2) {
+            treinoDiv.querySelector("#treinoB").scrollIntoView()
+        }
+        else if (number == 3) {
+            treinoDiv.querySelector("#treinoC").scrollIntoView()
+        }
+        else if (number == 4) {
+            treinoDiv.querySelector("#treinoD").scrollIntoView()
+        }
+        else if (number == 5) {
+            treinoDiv.querySelector("#treinoE").scrollIntoView()
+        }
     }
 
-    treinoA.addEventListener("click", () => treino("treinoA"))
-    treinoB.addEventListener("click", () => treino("treinoB"))
-    treinoC.addEventListener("click", () => treino("treinoC"))
-    treinoD.addEventListener("click", () => treino("treinoD"))
-    treinoE.addEventListener("click", () => treino("treinoE"))
+    rightButton.addEventListener("click", () => {
+        if (number < 5) {
+            number++
+            Roll()
+        }
+    })
 
+    leftButton.addEventListener("click", () => {
+        if (number > 1) {
+            number--
+            Roll()
+        }
+    })
+
+    function Planilha(treino) {
+        window.location.href = `${treino}.html`
+    }
+
+    treinoA.addEventListener("click", () => Planilha("TreinoA"))
+    treinoB.addEventListener("click", () => Planilha("TreinoB"))
+    treinoC.addEventListener("click", () => Planilha("TreinoC"))
+    treinoD.addEventListener("click", () => Planilha("TreinoD"))
+    treinoE.addEventListener("click", () => Planilha("TreinoE"))
 </script>
 
 </html>
