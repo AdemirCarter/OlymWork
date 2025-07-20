@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home / OlymWork</title>
+    <link rel="stylesheet" href="menu.css">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    <div class="title">
+        <h1>O que deseja treinar hoje, <span id="user">Ademir</span>?</h1>
+    </div>
+
+    <div class="escolher">
+        <button id="left"><img src="https://img.icons8.com/?size=100&id=40217&format=png&color=ffffff" alt=""></button>
+        <div class="treinos">
+            <button id="treinoA">Treino A</button>
+            <button id="treinoB">Treino B</button>
+            <button id="treinoC">Treino C</button>
+            <button id="treinoD">Treino D</button>
+            <button id="treinoE">Treino E</button>
+        </div>
+        <button id="right"><img src="https://img.icons8.com/?size=100&id=7849&format=png&color=ffffff" alt=""></button>
+    </div>
+
+    <div class="navbar">
+        <div>
+            <button id="home"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=8c2eff" alt=""></button>
+            <button><img src="https://img.icons8.com/?size=100&id=ATc0iViHX2IC&format=png&color=ffffff" alt=""></button>
+            <button><img src="https://img.icons8.com/?size=100&id=2yC9SZKcXDdX&format=png&color=ffffff" alt=""></button>
+        </div>
+    </div>
+</body>
+
+<script>
+    localStorage.setItem("user", "Ademir")
+
+    const user = document.querySelector("#user")
+    user.textContent = localStorage.getItem("user")
+
+    const leftButton = document.querySelector("#left")
+    const rightButton = document.querySelector("#right")
+
+    const treinoDiv = document.querySelector(".treinos")
+    const treinoA = treinoDiv.querySelector("#treinoA")
+    const treinoB = treinoDiv.querySelector("#treinoB")
+    const treinoC = treinoDiv.querySelector("#treinoC")
+    const treinoD = treinoDiv.querySelector("#treinoD")
+    const treinoE = treinoDiv.querySelector("#treinoE")
+
+    let number = 1
+
+    function Roll() {
+
+        console.log(number)
+
+        if (number == 1) {
+            treinoDiv.querySelector("#treinoA").scrollIntoView()
+        }
+        else if (number == 2) {
+            treinoDiv.querySelector("#treinoB").scrollIntoView()
+        }
+        else if (number == 3) {
+            treinoDiv.querySelector("#treinoC").scrollIntoView()
+        }
+        else if (number == 4) {
+            treinoDiv.querySelector("#treinoD").scrollIntoView()
+        }
+        else if (number == 5) {
+            treinoDiv.querySelector("#treinoE").scrollIntoView()
+        }
+    }
+
+    rightButton.addEventListener("click", () => {
+        if (number < 5) {
+            number++
+            Roll()
+        }
+    })
+
+    leftButton.addEventListener("click", () => {
+        if (number > 1) {
+            number--
+            Roll()
+        }
+    })
+
+    function Planilha(treino) {
+        window.location.href = `${treino}.html`
+    }
+
+    treinoA.addEventListener("click", () => Planilha("TreinoA"))
+    treinoB.addEventListener("click", () => Planilha("TreinoB"))
+    treinoC.addEventListener("click", () => Planilha("TreinoC"))
+    treinoD.addEventListener("click", () => Planilha("TreinoD"))
+    treinoE.addEventListener("click", () => Planilha("TreinoE"))
+</script>
+
+</html>
