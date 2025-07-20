@@ -26,7 +26,7 @@
 
     <div class="navbar">
         <div>
-            <button id="home"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=642eff" alt=""></button>
+            <button id="home"><img src="https://img.icons8.com/?size=100&id=2797&format=png&color=8c2eff" alt=""></button>
             <button><img src="https://img.icons8.com/?size=100&id=ATc0iViHX2IC&format=png&color=ffffff" alt=""></button>
             <button><img src="https://img.icons8.com/?size=100&id=2yC9SZKcXDdX&format=png&color=ffffff" alt=""></button>
         </div>
@@ -34,6 +34,11 @@
 </body>
 
 <script>
+    localStorage.setItem("user", "Ademir")
+
+    const user = document.querySelector("#user")
+    user.textContent = localStorage.getItem("user")
+
     const leftButton = document.querySelector("#left")
     const rightButton = document.querySelector("#right")
 

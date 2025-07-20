@@ -20,7 +20,7 @@
    }
 
    .title #user {
-    color: #642eff;
+    color: #8c2eff;
    }
 
    /*Escolher Treino*/
@@ -59,7 +59,7 @@
     padding: 10px 65px;
     font-size: 30px;
     border-radius: 20px;
-    background-color: #642eff;
+    background-color: #8c2eff;
     color: white;
     font-weight: 600;
     white-space: nowrap;
